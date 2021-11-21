@@ -1,4 +1,5 @@
 ﻿using eEnchere.Data;
+using eEnchere.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -9,16 +10,16 @@ using System.Threading.Tasks;
 namespace eEnchere.Controllers
 {
     public class RoomsController : Controller
-    { 
-        private readonly AppDbContext _context;
-    public RoomsController ( AppDbContext context)
     {
-        context = _context;
+        private readonly AppDbContext _db;
+    public RoomsController ( AppDbContext db )
+    {
+            _db = db;
     }
    
-        public async Task <IActionResult> Index()
+        public IActionResult Index()
         {
-            var allRooms = await _context.Rooms.ToListAsync();
+            IEnumerable<Room> allRooms = _db.Rooms;
             return View(allRooms);
             
         }

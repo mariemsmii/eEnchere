@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<Room>
 
+
 @{
     ViewData["Title"] = "List of Rooms";
 }
@@ -15,17 +16,17 @@
                             <p class="card-text">
                                 <h5 class="card-title">
                                     @item.NomRoom
-                                    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
-                                    {
+                                    @*@if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                                    {*@
                                         <a class="text-white float-right" asp-action="Edit" asp-route-id="@item.IdRoom"><i class="bi bi-pencil-square"></i></a>
-                                    }
+                                    @*}*@
                                 </h5>
                             </p>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <img src="@item.Article.Photo" width="100%" alt="@item.Article.Nom">
-                    </div>
+                    @*<div class="col-md-6">
+                      <img*@ <!--src="@item.Article.Photo" width="100%" alt="@item.Article.Nom">
+                    </div>-->
                     @*<div class="col-md-6">
                         <div class="card-body">
                             <p class="card-text">@item.Article.Description</p>
