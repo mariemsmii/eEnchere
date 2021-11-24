@@ -37,8 +37,8 @@ namespace eEnchere.Data
                             Description = "This is a phone",
                             Prix = 14752 ,
                             Photo="https://img.bfmtv.com/c/1256/708/697/18b3fae06494dd9eab71b1f689574.jpg",
-                            Etat="Non vendu",
-                            Origine="LG"
+                            Etat="Non vendu"
+                            
                         },
                         new Article()
                         {
@@ -46,8 +46,8 @@ namespace eEnchere.Data
                             Description = "This is a samsung photo",
                             Prix = 1500,
                             Photo="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJLM2D0YKPmUnkMXdDK-XrHia7dfgAPExHIQ&usqp=CAU",
-                            Etat="Non vendu",
-                            Origine="LG"
+                            Etat="Non vendu"
+                            
 
                         },
                         new Article()
@@ -56,8 +56,8 @@ namespace eEnchere.Data
                             Description = "This is a TV",
                             Prix = 3500,
                             Photo="https://images.samsung.com/is/image/samsung/n-africa-fhd-t5300-ua43t5300auxmv-frontblack-237364315?$720_576_PNG$",
-                            Etat="Non vendu",
-                            Origine="LG"
+                            Etat="Non vendu"
+                           
                         },
                         new Article()
                         {
@@ -65,8 +65,8 @@ namespace eEnchere.Data
                             Description = "This is a TV",
                             Prix = 2500,
                             Photo="https://sc02.alicdn.com/kf/HTB1d_rubijrK1RjSsplq6xHmVXar/221948536/HTB1d_rubijrK1RjSsplq6xHmVXar.jpg_.webp",
-                            Etat="Non vendu",
-                            Origine="LG"
+                            Etat="Non vendu"
+                          
                         },
 
                           new Article()
@@ -75,8 +75,8 @@ namespace eEnchere.Data
                             Description = "This is a TV",
                             Prix = 2500,
                             Photo="https://sc02.alicdn.com/kf/HTB1d_rubijrK1RjSsplq6xHmVXar/221948536/HTB1d_rubijrK1RjSsplq6xHmVXar.jpg_.webp",
-                            Etat="Non vendu",
-                            Origine="LG"
+                            Etat="Non vendu"
+                           
                         },
 
                             new Article()
@@ -85,8 +85,8 @@ namespace eEnchere.Data
                             Description = "This is a TV",
                             Prix = 2500,
                             Photo="https://www.samsungtunisie.tn/2773-large_default/tv-samsung-32-n5000-full-hd-tunisie.jpg",
-                            Etat="Non vendu",
-                            Origine="LG"
+                            Etat="Non vendu"
+                           
                         },
                             new Article()
                         {
@@ -94,8 +94,8 @@ namespace eEnchere.Data
                             Description = "This is a PC",
                             Prix = 2500,
                             Photo="https://www.tunisianet.com.tn/134180-large/pc-portable-lenovo-ideapad-l340-15irh-gaming-i7-9e-gen-16-go.jpg",
-                            Etat="Non vendu",
-                            Origine="LG"
+                            Etat="Non vendu"
+                           
                         },
                              new Article()
                         {
@@ -103,8 +103,8 @@ namespace eEnchere.Data
                             Description = "This is a PC",
                             Prix = 2200,
                             Photo="https://cdn.futura-sciences.com/buildsv6/images/largeoriginal/d/a/e/daedbc7758_50170718_2-lenovo-legion-y540-15irh.jpg",
-                            Etat="Non vendu",
-                            Origine="LG"
+                            Etat="Non vendu"
+                           
                         },
                     });
                     context.SaveChanges();

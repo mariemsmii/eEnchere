@@ -33,7 +33,6 @@
                             <p class="card-text"> @item.Article.Nom</p>
                             <p class="card-text"><b>Salle d'enchére remplie a :  (@item.NombreParticipants // 50)</b></p>
                             <p class="card-text"><b>Prix magasin: </b>@item.MontantInitial</p>
-                            <p class="card-text"><b>End Date: </b>@item.EndDate.ToString("dd MMM yy")</p>*@
                         <p class="card-text ">
                             <b>Status: </b>
                             @if (DateTime.Now <= item.DateDebut)

@@ -15,7 +15,6 @@ namespace eEnchere.Models
         public int Prix { get; set; }
         public string Photo { get; set; }
         public string Etat { get; set; }
-        public string Origine { get; set; }
     
     }
 }
