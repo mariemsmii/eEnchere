@@ -203,7 +203,7 @@ namespace eEnchere.Data
                            FraisRoom = 3,
                            MontantLancement = 3,
                             MontantInitial = 5,
-                            MontantEnchéreFinal= 8  ,
+                            MontantEnchéreFinal= 8,
                             IdArticle=1
 
                        },
