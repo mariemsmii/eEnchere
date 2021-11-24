@@ -23,9 +23,8 @@ namespace eEnchere.Models
         public float MontantInitial { get; set; }
         public float MontantEnchéreFinal { get; set; }
         //relationships
-
+        [ForeignKey("Article")]
         public int IdArticle { get; set; }
-        [ForeignKey("IdArticle")]
         public Article Article { get; set; }
 
         public List<Client_Room> Clients_Rooms { get; set; }

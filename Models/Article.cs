@@ -8,15 +8,14 @@ using System.Threading.Tasks;
 namespace eEnchere.Models
 {
     public class Article
-    {  [Key]
+    {[Key]
         public int IdArticle { get; set; }
         public string Nom { get; set; }
         public string Description { get; set; }
         public int Prix { get; set; }
         public string Photo { get; set; }
         public string Etat { get; set; }
-     
-      
-
+        public string Origine { get; set; }
+    
     }
 }

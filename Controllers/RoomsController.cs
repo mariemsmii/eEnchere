@@ -19,9 +19,10 @@ namespace eEnchere.Controllers
    
         public IActionResult Index()
         {
-            IEnumerable<Room> allRooms = _db.Rooms;
+            List<Room> allRooms = _db.Rooms.Include(c => c.Article).ToList();
             return View(allRooms);
             
         }
+       
     }
 }

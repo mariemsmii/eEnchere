@@ -15,7 +15,7 @@
                         <div class="card-header text-white bg-info">
                             <p class="card-text">
                                 <h5 class="card-title">
-                                    @item.NomRoom
+                                    Prévu Le @item.DateDebut.ToString("dd MMM yy")
                                     @*@if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                                     {*@
                                         <a class="text-white float-right" asp-action="Edit" asp-route-id="@item.IdRoom"><i class="bi bi-pencil-square"></i></a>
@@ -24,34 +24,35 @@
                             </p>
                         </div>
                     </div>
-                    @*<div class="col-md-6">
-                        <img src="@item.ImageURL" width="100%" alt="@item.Name">
-                    </div>*@
-                    @*<div class="col-md-6">
+                    <div class="col-md-6">
+                        <img src="@item.Article.Photo" width="100%">
+                    </div>
+                    
+                    <div class="col-md-6">
                         <div class="card-body">
-                            <p class="card-text">@item.Article.Description</p>
-                            <p class="card-text"><b>Cinema: </b>@item.Cinema.Name</p>
-                            <p class="card-text"><b>Category: </b>@item.MovieCategory</p>
-                            <p class="card-text"><b>Start Date: </b>@item.StartDate.ToString("dd MMM yy")</p>
-                            <p class="card-text"><b>End Date: </b>@item.EndDate.ToString("dd MMM yy")</p>
-                            <p class="card-text ">
-                                <b>Status: </b>
-                                @if (DateTime.Now >= item.DateDebut && DateTime.Now <= item.)
-                                {
-                                    <span class="badge bg-success text-white">AVAILABLE</span>
-                                }
-                                else if (DateTime.Now > item.EndDate)
-                                {
-                                    <span class="badge bg-danger text-white">EXPIRED</span>
-                                }
-                                else
-                                {
-                                    <span class="badge bg-primary text-white">UPCOMING</span>
-                                }
-                            </p>
+                            <p class="card-text"> @item.Article.Nom</p>
+                            <p class="card-text"><b>Salle d'enchére remplie a :  (@item.NombreParticipants // 50)</b></p>
+                            <p class="card-text"><b>Prix magasin: </b>@item.MontantInitial</p>
+                            <p class="card-text"><b>End Date: </b>@item.EndDate.ToString("dd MMM yy")</p>*@
+                        <p class="card-text ">
+                            <b>Status: </b>
+                            @if (DateTime.Now <= item.DateDebut)
+                            {
+                                <span class="badge bg-success text-white">AVAILABLE</span>
+                            }
+                            else if (DateTime.Now > item.DateDebut)
+                            {
+                                <span class="badge bg-primary text-white">UPCOMING</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger text-white">EXPIRED</span>
+
+                            }
+                        </p>
 
                         </div>
-                    </div>*@
+                    </div>
                     @*<div class="col-md-12">
                         <div class="card-footer ">
                             <p class="card-text">

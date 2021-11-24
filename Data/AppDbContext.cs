@@ -25,6 +25,11 @@ namespace eEnchere.Data
             base.OnModelCreating(modelBuilder);
         }
 
+        internal Task GetAllAsync(Func<object, object> p)
+        {
+            throw new NotImplementedException();
+        }
+
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Article> Articles { get; set; }
         public DbSet<Client_Room> Client_Rooms { get; set; }
