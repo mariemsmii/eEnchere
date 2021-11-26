@@ -18,6 +18,7 @@ namespace eEnchere.Data
 
                 context.Database.EnsureCreated();
 
+
                 //Cinema
                 if (!context.Articles.Any())
                 {

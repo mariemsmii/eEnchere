@@ -31,9 +31,16 @@
                     <div class="col-md-6">
                         <div class="card-body">
                             <p class="card-text"> @item.Article.Nom</p>
-                            <p class="card-text"><b>Salle d'enchére remplie a :  (@item.NombreParticipants // 50)</b></p>
-                            <p class="card-text"><b>Prix magasin: </b>@item.MontantInitial</p>
-                            <p class="card-text"><b>Prix Initial: </b>@item.MontantLancement</p>
+                            <p class="card-text">
+                                <b>
+                                    Salle d'enchére remplie a :    
+                                </b>
+                            </p>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: @item.NombreParticipants" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="card-text"><b>Prix magasin: </b>@item.MontantInitial DT</p>
+                            <p class="card-text"><b>Prix Initial: </b>@item.MontantLancement DT</p>
 
                             <p class="card-text ">
                                 <b>Status: </b>
@@ -59,8 +66,8 @@
             <div class="card-footer ">
                 <p class="card-text">
                    
-                   
-                        <i class="bi bi-cart-plus"></i> Participer a  @item.FraisRoom
+                    <button type="button" class="btn btn-info"> PARTICIPER A  @item.FraisRoom </button>
+                     
                     
                 </p>
             </div>
