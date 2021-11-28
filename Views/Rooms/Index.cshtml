@@ -6,6 +6,18 @@
 }
 
 <div class="row">
+    <section id="about" class="about">
+        <div class="container">
+
+            <div class="section-title">
+                <h2> COMMENT ÇA MARCHE ?</h2>
+                <p> Ça vous dit de payer votre iPhone ou votre voyage jusqu’à 80% moins cher? Erba7 est le premier site d’enchère libre EN TUNISIE. Vous enchérissez sur le produit qui vous intéresse, et si vous êtes le dernier à avoir la main, il est à vous !</p>
+            </div>
+
+
+
+        </div>
+    </section>
     @foreach (var item in Model)
     {
         <div class="col-md-4 col-xs-6 border-primary mb-3">
@@ -17,7 +29,7 @@
                                 <h5 class="card-title">
                                     Prévu Le @item.DateDebut.ToString("dd MMM yy")
                                     @*@if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
-                        {*@
+                                        {*@
                                     <a class="text-white float-right" asp-action="Edit" asp-route-id="@item.IdRoom"><i class="bi bi-pencil-square"></i></a>
                                     @*}*@
                                 </h5>
@@ -33,7 +45,7 @@
                             <p class="card-text"> @item.Article.Nom</p>
                             <p class="card-text">
                                 <b>
-                                    Salle d'enchére remplie a :    
+                                    Salle d'enchére remplie a :
                                 </b>
                             </p>
                             <div class="progress">
@@ -63,34 +75,34 @@
                     </div>
 
                     <div class="col-md-12">
-            <div class="card-footer ">
-                <p class="card-text">
-                   
-                    <button type="button" class="btn btn-info"> PARTICIPER A  @item.FraisRoom </button>
-                     
-                    
-                </p>
-            </div>
-        </div>
+                        <div class="card-footer ">
+                            <p class="card-text">
+
+                                <button type="button" class="btn btn-info"> PARTICIPER A  @item.FraisRoom </button>
+
+
+                            </p>
+                        </div>
+                    </div>
                     @*<div class="col-md-12">
-            <div class="card-footer ">
-                <p class="card-text">
-                    <a class="btn btn-outline-primary float-right" asp-action="Details" asp-route-id="@item.Id">
-                        <i class="bi bi-eye-fill"></i> Show Details
-                    </a>
-                    <a class="btn btn-success text-white @((DateTime.Now > item.EndDate) ? "disabled" : "")"
-                       asp-controller="Orders"
-                       asp-action="AddItemToShoppingCart"
-                       asp-route-id="@item.Id">
-                        <i class="bi bi-cart-plus"></i> Add to Cart (Price @item.Price.ToString("c"))
-                    </a>
-                </p>
-            </div>
-        </div>*@
+                            <div class="card-footer ">
+                                <p class="card-text">
+                                    <a class="btn btn-outline-primary float-right" asp-action="Details" asp-route-id="@item.Id">
+                                        <i class="bi bi-eye-fill"></i> Show Details
+                                    </a>
+                                    <a class="btn btn-success text-white @((DateTime.Now > item.EndDate) ? "disabled" : "")"
+                                       asp-controller="Orders"
+                                       asp-action="AddItemToShoppingCart"
+                                       asp-route-id="@item.Id">
+                                        <i class="bi bi-cart-plus"></i> Add to Cart (Price @item.Price.ToString("c"))
+                                    </a>
+                                </p>
+                            </div>
+                        </div>*@
                 </div>
             </div>
         </div>
     }
 </div>
 
-@*@await Html.PartialAsync("_CreateItem", "Movies")*@ 
+@*@await Html.PartialAsync("_CreateItem", "Movies")*@
