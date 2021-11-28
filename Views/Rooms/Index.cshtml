@@ -4,20 +4,19 @@
 @{
     ViewData["Title"] = "List of Rooms";
 }
+<section id="about" class="about">
+    <div class="container">
 
-<div class="row">
-    <section id="about" class="about">
-        <div class="container">
-
-            <div class="section-title">
-                <h2> COMMENT ÇA MARCHE ?</h2>
-                <p> Ça vous dit de payer votre iPhone ou votre voyage jusqu’à 80% moins cher? Erba7 est le premier site d’enchère libre EN TUNISIE. Vous enchérissez sur le produit qui vous intéresse, et si vous êtes le dernier à avoir la main, il est à vous !</p>
-            </div>
-
-
-
+        <div class="section-title">
+            <h2> LES ENCHERES EN COURS</h2>
         </div>
-    </section>
+
+
+
+    </div>
+</section>
+<div class="row">
+
     @foreach (var item in Model)
     {
         <div class="col-md-4 col-xs-6 border-primary mb-3">
