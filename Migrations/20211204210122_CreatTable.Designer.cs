@@ -10,8 +10,8 @@ using eEnchere.Data;
 namespace eEnchere.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20211126104201_base")]
-    partial class @base
+    [Migration("20211204210122_CreatTable")]
+    partial class CreatTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -2,7 +2,9 @@
 using eEnchere.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -69,7 +71,9 @@ namespace eEnchere.Controllers
                              new Claim(ClaimTypes.PrimarySid,"1"),
                             new Claim(ClaimTypes.Role,"User")
                             }, CookieAuthenticationDefaults.AuthenticationScheme);
-                        isAuthenticate = true; break;
+                        isAuthenticate = true;
+                        HttpContext.Session.SetString("username", username);
+                        break;
                     }
                     //else
                     //{
@@ -105,6 +109,26 @@ namespace eEnchere.Controllers
 
 
             return View();
+
+        }
+        // Get Register
+        public IActionResult Register()
+        {
+            return View();
+        }
+        // post create Client
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Register(Client obj)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Clients.Add(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Login");
+            }
+            return View(obj);
+
 
         }
     }

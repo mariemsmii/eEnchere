@@ -1,0 +1,40 @@
+﻿<section id="contact" class="contact">
+    <div class="container">
+        <div class="section-title">
+            <h2>S'inscrire</h2>
+
+        </div>
+        <div class="row">
+
+            <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" style="margin-left:25%">
+                <form asp-action="Register" method="post" role="form" class="php-email-form">
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="name">Nom</label>
+                            <input type="text" class="form-control" id="NomClient" name="NomClient" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="name">Prénom</label>
+                            <input type="text" class="form-control" id="PrénomClient" name="PrénomClient" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="name">Mail</label>
+                            <input type="email" class="form-control" id="MailClient" name="MailClient" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="name">Pseudo</label>
+                            <input type="text" class="form-control" id="Pseudo" name="Pseudo" required>
+                        </div>
+                        <div class="form-group col-md-6 mt-3 mt-md-0">
+                            <label for="name">Mot De Passe</label>
+                            <input type="password" class="form-control" id="MotDePasse" name="MotDePasse" required>
+                        </div>
+                    </div>
+
+                    <div class="text-center"><button type="submit" value="Login">Registrer</button></div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>

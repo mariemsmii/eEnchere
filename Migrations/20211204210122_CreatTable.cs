@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace eEnchere.Migrations
 {
-    public partial class one : Migration
+    public partial class CreatTable : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
