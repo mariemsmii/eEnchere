@@ -77,8 +77,9 @@
                         <div class="card-footer ">
                             <p class="card-text">
 
-                                <button type="button" class="btn btn-info" asp-controller="Account" asp-action="Login">PARTICIPER A  @item.FraisRoom Dt </button>
 
+                                @*<button type="button" class="btn btn-info" asp-controller="Rooms" asp-action="ParticperALaRoom(@item)">PARTICIPER A  @item.FraisRoom Dt </button>*@
+                                <a class="btn btn-info" asp-action="ParticperALaRoom" asp-controller="Rooms" asp-route-id="@item.IdRoom" asp-route-idClt="@TempData["id"]">PARTICIPER A  @item.FraisRoom Dt</a>
 
                             </p>
                         </div>

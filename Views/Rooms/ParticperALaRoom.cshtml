@@ -1,0 +1,18 @@
+﻿@model eEnchere.Models.Room
+
+@{ ViewBag.Title = ""; }
+
+
+<form asp-action="ParticperALaRoom" enctype="multipart/form-data" method="post" class="mt-3">
+    <div asp-validation-summary="All" class="text-danger">
+    </div>
+    <h1>Êtes-vous sure de confirmer la participation ?</h1>
+    <input hidden asp-for="IdRoom" />
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">Confirme</button>
+            <a asp-action="Index" asp-controller="Rooms" class="btn btn-primary">Cancel</a>
+        </div>
+    </div>
+
+</form>

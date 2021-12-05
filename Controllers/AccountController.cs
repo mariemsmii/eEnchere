@@ -69,6 +69,7 @@ namespace eEnchere.Controllers
                             new Claim(ClaimTypes.Role,"User")
                             }, CookieAuthenticationDefaults.AuthenticationScheme);
                         isAuthenticate = true;
+                        TempData["id"] = element.IdClient;
                         HttpContext.Session.SetString("username", username);
                         break;
                     }
@@ -89,6 +90,7 @@ namespace eEnchere.Controllers
                 else  
                 {
                     TempData["data"] = username;
+                    
                     return RedirectToAction("Index", "Rooms");
                 }
                 

@@ -23,33 +23,41 @@ namespace eEnchere.Controllers
             return View(allRooms);
             
         }
+
+        //get update
+        public IActionResult ParticperALaRoom(int? Id)
+        {
+            if (Id == null || Id == 0)
+            {
+                return NotFound();
+            }
+            var obj = _db.Rooms.Find(Id);
+            if (obj == null) { return NotFound(); }
+            //Room room= _db.Rooms.Find(obj.IdRoom);
+            return View(obj);
+
+
+
+        }
+        // post update
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult ParticperALaRoom(Room obj)
+        public IActionResult ParticperALaRoom(int Id , int idClt)
         {
+            
+            var obj = _db.Rooms.Find(Id);
+            var clt = _db.Client_Rooms.Find(idClt);
+            clt.IdRoom = Id;
             if (ModelState.IsValid)
             {
                 obj.NombreParticipants++;
                 _db.Rooms.Update(obj);
+                _db.Client_Rooms.Add(clt);
                 _db.SaveChanges();
-                return RedirectToAction("Details");
             }
             return View(obj);
 
 
         }
-
-        public ActionResult Details(int id)
-        {
-            var room = _db.Rooms.Find(id);
-            if (room == null)
-            {
-                return NotFound();
-            }
-            Article article = _db.Articles.Find(room.IdArticle);
-
-            return View(room);
-        }
-
     }
 }
