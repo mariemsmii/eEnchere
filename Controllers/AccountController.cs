@@ -58,10 +58,10 @@ namespace eEnchere.Controllers
            
             else
                 {
-                var i = 0;
-                do
+
+                foreach (Client element in allClients)
                 {
-                    if (username == allClients[i].Pseudo && password == allClients[i].MotDePasse)
+                    if (username == element.Pseudo && password == element.MotDePasse)
                     {
                         identity = new ClaimsIdentity(new[]{
                             new Claim(ClaimTypes.Name,username),
@@ -72,16 +72,8 @@ namespace eEnchere.Controllers
                         HttpContext.Session.SetString("username", username);
                         break;
                     }
-                    //else
-                    //{
-                    //    return RedirectToAction("Index", "Home");
-                    //}
-
-
-                    i++;
-
-
-                } while (username == allClients[i].Pseudo && password == allClients[i].MotDePasse);
+                  
+                }
 
 
             }
