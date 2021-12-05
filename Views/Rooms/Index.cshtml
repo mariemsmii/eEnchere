@@ -47,10 +47,10 @@
                                     Salle d'enchére remplie a :
                                 </b>
                             </p>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: @item.NombreParticipants" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            <div class="progress">                               
+                                <progress id="file" value="@item.NombreParticipants" max="50"></progress>
                             </div>
-                            <p class="card-text"><b>Prix magasin: </b>@item.MontantInitial DT</p>
+                            <p class="card-text"><b>Prix magasin: </b>@item.MontantEnchére DT</p>
                             <p class="card-text"><b>Prix Initial: </b>@item.MontantLancement DT</p>
 
                             <p class="card-text ">
@@ -77,7 +77,7 @@
                         <div class="card-footer ">
                             <p class="card-text">
 
-                                <button type="button" class="btn btn-info" asp-controller="Account" asp-action="Login">PARTICIPER A  @item.FraisRoom </button>
+                                <button type="button" class="btn btn-info" asp-controller="Account" asp-action="Login">PARTICIPER A  @item.FraisRoom Dt </button>
 
 
                             </p>

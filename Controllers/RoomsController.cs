@@ -23,6 +23,33 @@ namespace eEnchere.Controllers
             return View(allRooms);
             
         }
-       
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult ParticperALaRoom(Room obj)
+        {
+            if (ModelState.IsValid)
+            {
+                obj.NombreParticipants++;
+                _db.Rooms.Update(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Details");
+            }
+            return View(obj);
+
+
+        }
+
+        public ActionResult Details(int id)
+        {
+            var room = _db.Rooms.Find(id);
+            if (room == null)
+            {
+                return NotFound();
+            }
+            Article article = _db.Articles.Find(room.IdArticle);
+
+            return View(room);
+        }
+
     }
 }

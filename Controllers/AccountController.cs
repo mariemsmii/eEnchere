@@ -25,14 +25,11 @@ namespace eEnchere.Controllers
        
         public IActionResult Index()
         {
-            
-
             return View();
         }
         public IActionResult Login()
         {
             return View();
-
         }
 
         //login
@@ -99,13 +96,13 @@ namespace eEnchere.Controllers
                 }
                 else  
                 {
-
+                    TempData["data"] = username;
                     return RedirectToAction("Index", "Rooms");
                 }
                 
 
             }
-
+            
 
 
             return View();
@@ -128,8 +125,14 @@ namespace eEnchere.Controllers
                 return RedirectToAction("Login");
             }
             return View(obj);
-
-
+        }
+        //Logout
+        [HttpGet]
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Remove("username");
+            TempData["data"] = null;
+            return View();
         }
     }
 }
