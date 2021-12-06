@@ -44,15 +44,19 @@ namespace eEnchere.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult ParticperALaRoom(int Id , int idClt)
         {
+            idClt = 2 ;
             
             var obj = _db.Rooms.Find(Id);
-            var clt = _db.Client_Rooms.Find(idClt);
-            clt.IdRoom = Id;
+            Client_Room cltRoom = new Client_Room() ;
+            cltRoom.IdClient = idClt;
+            cltRoom.IdRoom = Id ;
+            
+            
             if (ModelState.IsValid)
             {
                 obj.NombreParticipants++;
                 _db.Rooms.Update(obj);
-                _db.Client_Rooms.Add(clt);
+                _db.Client_Rooms.Add(cltRoom);
                 _db.SaveChanges();
             }
             return View(obj);
