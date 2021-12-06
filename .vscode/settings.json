@@ -1,0 +1,7 @@
+{
+    "solidity.defaultCompiler": "localNodeModule",
+    "solidity.nodemodulespackage": "@eth-optimism\\solc",
+    "solidity.compileUsingLocalVersion": "c:\\Users\\lenovo\\source\\repos\\eEnchere\\soljson-v0.6.4+commit.1dca32f3.js",
+    "solidity.packageDefaultDependenciesContractsDirectory": " \"solidity.packageDefaultDependenciesContractsDirectory\": \"\",",
+    "solidity.packageDefaultDependenciesDirectory": "\"solidity.packageDefaultDependenciesDirectory\": \"eEnchere/node_modules\""
+}
