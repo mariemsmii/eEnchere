@@ -46,18 +46,29 @@ namespace eEnchere.Controllers
         {
             
             var obj = _db.Rooms.Find(Id);
-            var clt = _db.Client_Rooms.Find(idClt);
-            clt.IdRoom = Id;
+            //var clt = _db.Client_Rooms.Find(idClt);
+           // clt.IdRoom = Id;
             if (ModelState.IsValid)
             {
                 obj.NombreParticipants++;
                 _db.Rooms.Update(obj);
-                _db.Client_Rooms.Add(clt);
+               // _db.Client_Rooms.Add(clt);
                 _db.SaveChanges();
             }
             return View(obj);
 
 
+        }
+        public IActionResult Enchere(int? Id) {
+           // List<Room> allRooms = _db.Rooms.Include(c => c.Article).ToList();
+            if (Id == null || Id == 0)
+            {
+                return NotFound();
+            }
+            var obj = _db.Rooms.Find(Id);
+            if (obj == null) { return NotFound(); }
+            //Room room= _db.Rooms.Find(obj.IdRoom);
+            return View(obj);
         }
     }
 }
