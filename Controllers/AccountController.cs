@@ -73,7 +73,7 @@ namespace eEnchere.Controllers
                         HttpContext.Session.SetString("username", username);
                         break;
                     }
-                    else return View("Pseudo or password Introuvable");
+                    
                   
                 }
 

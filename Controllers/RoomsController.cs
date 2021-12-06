@@ -44,15 +44,16 @@ namespace eEnchere.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult ParticperALaRoom(int Id , int idClt)
         {
-            
+            idClt = 3;
             var obj = _db.Rooms.Find(Id);
-            //var clt = _db.Client_Rooms.Find(idClt);
-           // clt.IdRoom = Id;
+            Client_Room cltRoom = new Client_Room();
+            cltRoom.IdRoom = Id;
+            cltRoom.IdClient = idClt;
             if (ModelState.IsValid)
             {
                 obj.NombreParticipants++;
                 _db.Rooms.Update(obj);
-               // _db.Client_Rooms.Add(clt);
+                _db.Client_Rooms.Add(cltRoom);
                 _db.SaveChanges();
             }
             return View(obj);
@@ -69,6 +70,25 @@ namespace eEnchere.Controllers
             if (obj == null) { return NotFound(); }
             //Room room= _db.Rooms.Find(obj.IdRoom);
             return View(obj);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Enchere(int Id, int idClt)
+        {
+
+            var obj = _db.Rooms.Find(Id);
+            //var clt = _db.Client_Rooms.Find(idClt);
+            // clt.IdRoom = Id;
+            if (ModelState.IsValid)
+            {
+                obj.NombreParticipants++;
+                _db.Rooms.Update(obj);
+                // _db.Client_Rooms.Add(clt);
+                _db.SaveChanges();
+            }
+            return View(obj);
+
+
         }
     }
 }
